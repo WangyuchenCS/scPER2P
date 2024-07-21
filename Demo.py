@@ -422,7 +422,7 @@ os.environ["KMP_WARNINGS"] = "off"
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type=str, default='dataset3',help='dataset1/dataset2/dataset3')
+parser.add_argument("--dataset", type=str, default='dataset1',help='dataset1/dataset2/dataset3')
 parser.add_argument("--lr", type=float, default=3e-4, help='Learning rate.')
 
 parser.add_argument("--use_prompt", type=bool, default=True, help='whether use prompt or not.')
