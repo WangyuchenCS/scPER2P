@@ -1,0 +1,957 @@
+nohup: ignoring input
+Global seed set to 0
+wandb: Currently logged in as: ywang2542-c (wang_wandb). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/wandb/run-20240423_043204-lchtqkqb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run gentle-firefly-349
+wandb: ⭐️ View project at https://wandb.ai/wang_wandb/scGPT
+wandb: 🚀 View run at https://wandb.ai/wang_wandb/scGPT/runs/lchtqkqb
+scPEFT_scGPT
+Namespace(dataset='dataset2', lr=5e-05, use_prompt=True, prompt_type='Gene_encoder_prompt', data_name='ms', data_path='/home/wsl20/Projects/RNA2prot/scGPT/data/', space_conf=[1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], mlp_conf=[1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], epoch=100)
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]}
+save to save/dataset2/Gene_encoder_prompt/5e-05
+adata_gene (4330, 21005)
+adata_protein (4330, 42)
+celltype num_types:1
+scGPT - INFO - match 19491/21005 genes in vocabulary of size 60697.
+scGPT - INFO - Resume model from /home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human/best_model.pt, the model args will override the config /home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human/args.json.
+scGPT - INFO - Filtering genes by counts ...
+scGPT - INFO - Filtering cells by counts ...
+scGPT - INFO - Normalizing total counts ...
+scGPT - INFO - Binning data ...
+scGPT - INFO - train set number of samples: 3897, 
+	 feature length: 2001
+scGPT - INFO - valid set number of samples: 433, 
+	 feature length: 2001
+except!!!! only load params that are in the model and match the size!!!!!
+scGPT - INFO - Loading params encoder.enc_norm.weight with shape torch.Size([512])
+scGPT - INFO - Loading params encoder.enc_norm.bias with shape torch.Size([512])
+scGPT - INFO - Loading params value_encoder.linear1.weight with shape torch.Size([512, 1])
+scGPT - INFO - Loading params value_encoder.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params value_encoder.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params value_encoder.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params value_encoder.norm.weight with shape torch.Size([512])
+scGPT - INFO - Loading params value_encoder.norm.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.0.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.0.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.1.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.1.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.2.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.2.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.3.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.3.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.4.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.4.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.5.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.5.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.6.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.6.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.7.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.7.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.8.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.8.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.9.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.9.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.10.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.10.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.self_attn.in_proj_weight with shape torch.Size([1536, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.self_attn.in_proj_bias with shape torch.Size([1536])
+scGPT - INFO - Loading params transformer_encoder.layers.11.self_attn.out_proj.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.self_attn.out_proj.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.linear1.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.linear1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.linear2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.linear2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.norm1.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.norm1.bias with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.norm2.weight with shape torch.Size([512])
+scGPT - INFO - Loading params transformer_encoder.layers.11.norm2.bias with shape torch.Size([512])
+scGPT - INFO - Loading params decoder.fc.0.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params decoder.fc.0.bias with shape torch.Size([512])
+scGPT - INFO - Loading params decoder.fc.2.weight with shape torch.Size([512, 512])
+scGPT - INFO - Loading params decoder.fc.2.bias with shape torch.Size([512])
+Total Pre freeze Params 28343851
+All para.requires_grad:  False, Freeze!
+Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.Space_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.0.MLP_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.Space_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.1.MLP_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.Space_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.2.MLP_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.Space_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.3.MLP_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.Space_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.4.MLP_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.Space_Adapter.D_fc2.bias
+Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc1.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc1.weight
+Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc1.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc1.bias
+Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc2.weight
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc2.weight
+Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc2.bias
+scGPT - INFO - Adapter in name: transformer_encoder.layers.5.MLP_Adapter.D_fc2.bias
+cls in name: cls_decoder._decoder.0.weight
+scGPT - INFO - cls in name: cls_decoder._decoder.0.weight
+cls in name: cls_decoder._decoder.0.bias
+scGPT - INFO - cls in name: cls_decoder._decoder.0.bias
+cls in name: cls_decoder._decoder.2.weight
+scGPT - INFO - cls in name: cls_decoder._decoder.2.weight
+cls in name: cls_decoder._decoder.2.bias
+scGPT - INFO - cls in name: cls_decoder._decoder.2.bias
+cls in name: cls_decoder._decoder.3.weight
+scGPT - INFO - cls in name: cls_decoder._decoder.3.weight
+cls in name: cls_decoder._decoder.3.bias
+scGPT - INFO - cls in name: cls_decoder._decoder.3.bias
+cls in name: cls_decoder._decoder.5.weight
+scGPT - INFO - cls in name: cls_decoder._decoder.5.weight
+cls in name: cls_decoder._decoder.5.bias
+scGPT - INFO - cls in name: cls_decoder._decoder.5.bias
+cls in name: cls_decoder.out_layer.weight
+scGPT - INFO - cls in name: cls_decoder.out_layer.weight
+cls in name: cls_decoder.out_layer.bias
+scGPT - INFO - cls in name: cls_decoder.out_layer.bias
+Total Post0 freeze Params 2655275
+total:28343851
+trainable:2655275
+Total Post freeze Params 2655275
+scGPT - INFO - Total Pre freeze Params 28343851
+scGPT - INFO - Total Post freeze Params 2655275
+Epoch:  1
+Training model
+scGPT - INFO - | epoch   1 | 100/1949 batches | lr 0.0001 | ms/batch 98.06 | loss 149.33 | mse 149.33 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 200/1949 batches | lr 0.0001 | ms/batch 92.43 | loss 65.05 | mse 65.05 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 300/1949 batches | lr 0.0001 | ms/batch 92.61 | loss 66.85 | mse 66.85 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 400/1949 batches | lr 0.0001 | ms/batch 92.71 | loss 63.69 | mse 63.69 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 500/1949 batches | lr 0.0001 | ms/batch 92.78 | loss 64.12 | mse 64.12 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 600/1949 batches | lr 0.0001 | ms/batch 92.87 | loss 62.68 | mse 62.68 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 700/1949 batches | lr 0.0001 | ms/batch 93.12 | loss 63.43 | mse 63.43 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 800/1949 batches | lr 0.0001 | ms/batch 93.29 | loss 65.28 | mse 65.28 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 900/1949 batches | lr 0.0001 | ms/batch 93.13 | loss 61.97 | mse 61.97 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1000/1949 batches | lr 0.0001 | ms/batch 93.94 | loss 67.32 | mse 67.32 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1100/1949 batches | lr 0.0001 | ms/batch 92.75 | loss 67.33 | mse 67.33 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1200/1949 batches | lr 0.0001 | ms/batch 92.76 | loss 63.69 | mse 63.69 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1300/1949 batches | lr 0.0001 | ms/batch 92.85 | loss 63.85 | mse 63.85 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1400/1949 batches | lr 0.0001 | ms/batch 92.92 | loss 64.93 | mse 64.93 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1500/1949 batches | lr 0.0001 | ms/batch 92.85 | loss 62.63 | mse 62.63 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1600/1949 batches | lr 0.0001 | ms/batch 92.86 | loss 64.30 | mse 64.30 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1700/1949 batches | lr 0.0001 | ms/batch 92.93 | loss 71.68 | mse 71.68 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1800/1949 batches | lr 0.0001 | ms/batch 92.91 | loss 65.19 | mse 65.19 | mre  0.00 |
+scGPT - INFO - | epoch   1 | 1900/1949 batches | lr 0.0001 | ms/batch 92.79 | loss 62.84 | mse 62.84 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   1 | time: 188.28s | valid loss/mse 62.8134 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 62.8134
+epoch:  1
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[-0.03455  2.037    1.097   ...  2.635    0.0915   0.04675]
+ [-0.02333  2.02     1.088   ...  2.625    0.0923   0.04602]
+ [-0.03638  2.088    1.127   ...  2.686    0.08215  0.047  ]
+ ...
+ [-0.02638  1.942    1.043   ...  2.543    0.10345  0.0465 ]
+ [-0.02931  2.047    1.1045  ...  2.654    0.09045  0.04846]
+ [-0.03705  2.168    1.19    ...  2.74     0.069    0.04126]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.7487±0.0 MAE:  0.553±0.0 R2:  0.2844±0.0 PCC:  0.6321±0.0 Cosine Similarity:  0.7368±0.0
+By sample:  MSE:  0.7487±0.0 MAE:  0.553±0.0 R2:  -0.0234±0.0 PCC:  0.0663±0.0 Cosine Similarity:  0.4812±0.0
+scGPT - INFO - By feature: MSE: 0.7487000226974487±0.0 MAE: 0.5529999732971191±0.0 R2: 0.2844±0.0 PCC: 0.6321±0.0 Cosine Similarity: 0.7368±0.0
+scGPT - INFO - By sample: MSE: 0.7487000226974487±0.0 MAE: 0.5529999732971191±0.0 R2: -0.0234±0.0 PCC: 0.0663±0.0 Cosine Similarity: 0.4812±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  2
+Training model
+scGPT - INFO - | epoch   2 | 100/1949 batches | lr 0.0000 | ms/batch 95.14 | loss 62.26 | mse 62.26 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 200/1949 batches | lr 0.0000 | ms/batch 92.81 | loss 63.97 | mse 63.97 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 300/1949 batches | lr 0.0000 | ms/batch 92.90 | loss 65.80 | mse 65.80 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 400/1949 batches | lr 0.0000 | ms/batch 92.80 | loss 62.73 | mse 62.73 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 500/1949 batches | lr 0.0000 | ms/batch 92.67 | loss 63.51 | mse 63.51 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 600/1949 batches | lr 0.0000 | ms/batch 92.65 | loss 61.47 | mse 61.47 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 700/1949 batches | lr 0.0000 | ms/batch 92.58 | loss 62.82 | mse 62.82 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 800/1949 batches | lr 0.0000 | ms/batch 92.59 | loss 64.55 | mse 64.55 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 900/1949 batches | lr 0.0000 | ms/batch 92.59 | loss 61.33 | mse 61.33 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1000/1949 batches | lr 0.0000 | ms/batch 92.70 | loss 66.73 | mse 66.73 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1100/1949 batches | lr 0.0000 | ms/batch 96.17 | loss 66.52 | mse 66.52 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1200/1949 batches | lr 0.0000 | ms/batch 96.02 | loss 62.77 | mse 62.77 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1300/1949 batches | lr 0.0000 | ms/batch 93.85 | loss 63.24 | mse 63.24 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1400/1949 batches | lr 0.0000 | ms/batch 90.64 | loss 63.87 | mse 63.87 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1500/1949 batches | lr 0.0000 | ms/batch 90.65 | loss 61.89 | mse 61.89 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1600/1949 batches | lr 0.0000 | ms/batch 90.64 | loss 62.41 | mse 62.41 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1700/1949 batches | lr 0.0000 | ms/batch 90.78 | loss 70.62 | mse 70.62 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1800/1949 batches | lr 0.0000 | ms/batch 90.74 | loss 63.43 | mse 63.43 | mre  0.00 |
+scGPT - INFO - | epoch   2 | 1900/1949 batches | lr 0.0000 | ms/batch 90.65 | loss 61.36 | mse 61.36 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   2 | time: 187.02s | valid loss/mse 60.7356 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 60.7356
+best_loss: 62.81342388796201, min_delta 0.0001, val_loss 60.73555680730877
+Loss error: 2.0778670806532418
+epoch:  2
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.03116 1.958   1.061   ... 2.525   0.09686 0.05847]
+ [0.04105 1.82    1.001   ... 2.47    0.09326 0.06494]
+ [0.0408  1.929   1.045   ... 2.54    0.08234 0.06226]
+ ...
+ [0.04092 1.843   0.9985  ... 2.455   0.0891  0.06506]
+ [0.03787 2.066   1.107   ... 2.605   0.095   0.0586 ]
+ [0.03708 2.252   1.19    ... 2.672   0.0874  0.05426]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.7239±0.0 MAE:  0.5409±0.0 R2:  0.3176±0.0 PCC:  0.6429±0.0 Cosine Similarity:  0.7437±0.0
+By sample:  MSE:  0.7239±0.0 MAE:  0.5409±0.0 R2:  0.001±0.0 PCC:  0.0958±0.0 Cosine Similarity:  0.5034±0.0
+scGPT - INFO - By feature: MSE: 0.7239000201225281±0.0 MAE: 0.5408999919891357±0.0 R2: 0.3176±0.0 PCC: 0.6429±0.0 Cosine Similarity: 0.7437±0.0
+scGPT - INFO - By sample: MSE: 0.7239000201225281±0.0 MAE: 0.5408999919891357±0.0 R2: 0.001±0.0 PCC: 0.0958±0.0 Cosine Similarity: 0.5034±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  3
+Training model
+scGPT - INFO - | epoch   3 | 100/1949 batches | lr 0.0000 | ms/batch 92.07 | loss 60.60 | mse 60.60 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 200/1949 batches | lr 0.0000 | ms/batch 91.38 | loss 61.49 | mse 61.49 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 300/1949 batches | lr 0.0000 | ms/batch 90.81 | loss 62.14 | mse 62.14 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 400/1949 batches | lr 0.0000 | ms/batch 90.85 | loss 59.00 | mse 59.00 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 500/1949 batches | lr 0.0000 | ms/batch 90.78 | loss 57.72 | mse 57.72 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 600/1949 batches | lr 0.0000 | ms/batch 91.00 | loss 54.95 | mse 54.95 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 700/1949 batches | lr 0.0000 | ms/batch 90.76 | loss 57.75 | mse 57.75 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 800/1949 batches | lr 0.0000 | ms/batch 90.75 | loss 58.51 | mse 58.51 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 900/1949 batches | lr 0.0000 | ms/batch 90.79 | loss 54.25 | mse 54.25 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1000/1949 batches | lr 0.0000 | ms/batch 90.79 | loss 57.59 | mse 57.59 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1100/1949 batches | lr 0.0000 | ms/batch 90.78 | loss 57.35 | mse 57.35 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1200/1949 batches | lr 0.0000 | ms/batch 91.29 | loss 57.06 | mse 57.06 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1300/1949 batches | lr 0.0000 | ms/batch 90.82 | loss 57.92 | mse 57.92 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1400/1949 batches | lr 0.0000 | ms/batch 90.79 | loss 57.27 | mse 57.27 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1500/1949 batches | lr 0.0000 | ms/batch 90.77 | loss 54.91 | mse 54.91 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1600/1949 batches | lr 0.0000 | ms/batch 90.79 | loss 54.98 | mse 54.98 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1700/1949 batches | lr 0.0000 | ms/batch 90.79 | loss 62.05 | mse 62.05 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1800/1949 batches | lr 0.0000 | ms/batch 90.81 | loss 53.85 | mse 53.85 | mre  0.00 |
+scGPT - INFO - | epoch   3 | 1900/1949 batches | lr 0.0000 | ms/batch 90.78 | loss 52.46 | mse 52.46 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   3 | time: 183.83s | valid loss/mse 55.2672 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 55.2672
+best_loss: 60.73555680730877, min_delta 0.0001, val_loss 55.267159704248016
+Loss error: 5.468397103060752
+epoch:  3
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.02347  1.206    0.6562   ... 2.664    0.0782   0.05292 ]
+ [0.0529   0.873    0.3875   ... 2.643    0.07587  0.04144 ]
+ [0.05093  0.9473   0.4194   ... 2.691    0.0776   0.03973 ]
+ ...
+ [0.01053  3.271    1.815    ... 2.453    0.05597  0.11383 ]
+ [0.006195 3.783    2.152    ... 2.453    0.1236   0.1343  ]
+ [0.006287 3.902    2.209    ... 2.518    0.1244   0.1261  ]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.6583±0.0 MAE:  0.5001±0.0 R2:  0.3791±0.0 PCC:  0.6889±0.0 Cosine Similarity:  0.7746±0.0
+By sample:  MSE:  0.6583±0.0 MAE:  0.5001±0.0 R2:  0.0405±0.0 PCC:  0.1733±0.0 Cosine Similarity:  0.5164±0.0
+scGPT - INFO - By feature: MSE: 0.65829998254776±0.0 MAE: 0.5001000165939331±0.0 R2: 0.3791±0.0 PCC: 0.6889±0.0 Cosine Similarity: 0.7746±0.0
+scGPT - INFO - By sample: MSE: 0.65829998254776±0.0 MAE: 0.5001000165939331±0.0 R2: 0.0405±0.0 PCC: 0.1733±0.0 Cosine Similarity: 0.5164±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  4
+Training model
+scGPT - INFO - | epoch   4 | 100/1949 batches | lr 0.0000 | ms/batch 97.35 | loss 53.86 | mse 53.86 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 200/1949 batches | lr 0.0000 | ms/batch 96.76 | loss 54.93 | mse 54.93 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 300/1949 batches | lr 0.0000 | ms/batch 94.95 | loss 56.08 | mse 56.08 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 400/1949 batches | lr 0.0000 | ms/batch 92.93 | loss 54.28 | mse 54.28 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 500/1949 batches | lr 0.0000 | ms/batch 92.84 | loss 52.63 | mse 52.63 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 600/1949 batches | lr 0.0000 | ms/batch 92.89 | loss 52.66 | mse 52.66 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 700/1949 batches | lr 0.0000 | ms/batch 92.87 | loss 52.94 | mse 52.94 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 800/1949 batches | lr 0.0000 | ms/batch 92.89 | loss 55.27 | mse 55.27 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 900/1949 batches | lr 0.0000 | ms/batch 92.97 | loss 50.60 | mse 50.60 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1000/1949 batches | lr 0.0000 | ms/batch 92.93 | loss 54.67 | mse 54.67 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1100/1949 batches | lr 0.0000 | ms/batch 92.89 | loss 55.01 | mse 55.01 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1200/1949 batches | lr 0.0000 | ms/batch 93.32 | loss 54.54 | mse 54.54 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1300/1949 batches | lr 0.0000 | ms/batch 92.66 | loss 54.93 | mse 54.93 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1400/1949 batches | lr 0.0000 | ms/batch 92.70 | loss 55.82 | mse 55.82 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1500/1949 batches | lr 0.0000 | ms/batch 92.78 | loss 52.66 | mse 52.66 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1600/1949 batches | lr 0.0000 | ms/batch 92.72 | loss 52.22 | mse 52.22 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1700/1949 batches | lr 0.0000 | ms/batch 92.87 | loss 58.93 | mse 58.93 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1800/1949 batches | lr 0.0000 | ms/batch 92.76 | loss 51.07 | mse 51.07 | mre  0.00 |
+scGPT - INFO - | epoch   4 | 1900/1949 batches | lr 0.0000 | ms/batch 92.79 | loss 51.35 | mse 51.35 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   4 | time: 189.67s | valid loss/mse 54.2380 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 54.2380
+best_loss: 55.267159704248016, min_delta 0.0001, val_loss 54.23795406042015
+Loss error: 1.029205643827865
+epoch:  4
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[ 6.201e-02  1.144e+00  6.084e-01 ...  2.527e+00  4.492e-02  8.057e-02]
+ [ 6.250e-02  8.149e-01  3.801e-01 ...  2.514e+00  8.557e-02  5.557e-02]
+ [ 5.811e-02  8.774e-01  4.204e-01 ...  2.580e+00  8.984e-02  6.076e-02]
+ ...
+ [ 2.777e-02  3.760e+00  2.059e+00 ...  2.496e+00  8.423e-02  1.124e-01]
+ [-1.282e-03  3.965e+00  2.189e+00 ...  2.500e+00  1.139e-01  9.998e-02]
+ [ 3.824e-03  4.105e+00  2.250e+00 ...  2.578e+00  1.148e-01  9.564e-02]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.646±0.0 MAE:  0.4947±0.0 R2:  0.39±0.0 PCC:  0.6951±0.0 Cosine Similarity:  0.7786±0.0
+By sample:  MSE:  0.646±0.0 MAE:  0.4947±0.0 R2:  0.047±0.0 PCC:  0.1923±0.0 Cosine Similarity:  0.5201±0.0
+scGPT - INFO - By feature: MSE: 0.6460000276565552±0.0 MAE: 0.49470001459121704±0.0 R2: 0.39±0.0 PCC: 0.6951±0.0 Cosine Similarity: 0.7786±0.0
+scGPT - INFO - By sample: MSE: 0.6460000276565552±0.0 MAE: 0.49470001459121704±0.0 R2: 0.047±0.0 PCC: 0.1923±0.0 Cosine Similarity: 0.5201±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  5
+Training model
+scGPT - INFO - | epoch   5 | 100/1949 batches | lr 0.0000 | ms/batch 92.18 | loss 51.47 | mse 51.47 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 200/1949 batches | lr 0.0000 | ms/batch 91.03 | loss 52.07 | mse 52.07 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 300/1949 batches | lr 0.0000 | ms/batch 91.99 | loss 54.59 | mse 54.59 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 400/1949 batches | lr 0.0000 | ms/batch 91.55 | loss 53.00 | mse 53.00 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 500/1949 batches | lr 0.0000 | ms/batch 90.82 | loss 51.08 | mse 51.08 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 600/1949 batches | lr 0.0000 | ms/batch 90.81 | loss 51.46 | mse 51.46 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 700/1949 batches | lr 0.0000 | ms/batch 90.80 | loss 50.79 | mse 50.79 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 800/1949 batches | lr 0.0000 | ms/batch 90.86 | loss 52.19 | mse 52.19 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 900/1949 batches | lr 0.0000 | ms/batch 90.88 | loss 50.43 | mse 50.43 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1000/1949 batches | lr 0.0000 | ms/batch 90.81 | loss 52.03 | mse 52.03 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1100/1949 batches | lr 0.0000 | ms/batch 90.86 | loss 52.76 | mse 52.76 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1200/1949 batches | lr 0.0000 | ms/batch 90.84 | loss 52.67 | mse 52.67 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1300/1949 batches | lr 0.0000 | ms/batch 91.64 | loss 53.08 | mse 53.08 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1400/1949 batches | lr 0.0000 | ms/batch 90.89 | loss 53.80 | mse 53.80 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1500/1949 batches | lr 0.0000 | ms/batch 90.88 | loss 51.21 | mse 51.21 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1600/1949 batches | lr 0.0000 | ms/batch 90.85 | loss 50.32 | mse 50.32 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1700/1949 batches | lr 0.0000 | ms/batch 90.87 | loss 56.12 | mse 56.12 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1800/1949 batches | lr 0.0000 | ms/batch 90.84 | loss 49.51 | mse 49.51 | mre  0.00 |
+scGPT - INFO - | epoch   5 | 1900/1949 batches | lr 0.0000 | ms/batch 90.92 | loss 50.01 | mse 50.01 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   5 | time: 184.10s | valid loss/mse 51.8736 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 51.8736
+best_loss: 54.23795406042015, min_delta 0.0001, val_loss 51.873573525673244
+Loss error: 2.364380534746907
+epoch:  5
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0781  0.973   0.4993  ... 2.684   0.09375 0.0698 ]
+ [0.0558  0.853   0.4004  ... 2.582   0.1078  0.03357]
+ [0.0626  0.909   0.4358  ... 2.68    0.11725 0.0498 ]
+ ...
+ [0.0534  3.844   2.102   ... 2.514   0.09204 0.0698 ]
+ [0.0481  3.943   2.162   ... 2.496   0.0946  0.07275]
+ [0.0533  4.04    2.197   ... 2.56    0.0924  0.07404]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.6178±0.0 MAE:  0.4833±0.0 R2:  0.4145±0.0 PCC:  0.7126±0.0 Cosine Similarity:  0.7903±0.0
+By sample:  MSE:  0.6178±0.0 MAE:  0.4833±0.0 R2:  0.0701±0.0 PCC:  0.2201±0.0 Cosine Similarity:  0.5306±0.0
+scGPT - INFO - By feature: MSE: 0.6177999973297119±0.0 MAE: 0.48330000042915344±0.0 R2: 0.4145±0.0 PCC: 0.7126±0.0 Cosine Similarity: 0.7903±0.0
+scGPT - INFO - By sample: MSE: 0.6177999973297119±0.0 MAE: 0.48330000042915344±0.0 R2: 0.0701±0.0 PCC: 0.2201±0.0 Cosine Similarity: 0.5306±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  6
+Training model
+scGPT - INFO - | epoch   6 | 100/1949 batches | lr 0.0000 | ms/batch 97.69 | loss 48.40 | mse 48.40 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 200/1949 batches | lr 0.0000 | ms/batch 96.13 | loss 49.97 | mse 49.97 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 300/1949 batches | lr 0.0000 | ms/batch 96.77 | loss 53.38 | mse 53.38 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 400/1949 batches | lr 0.0000 | ms/batch 96.12 | loss 49.62 | mse 49.62 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 500/1949 batches | lr 0.0000 | ms/batch 96.17 | loss 50.40 | mse 50.40 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 600/1949 batches | lr 0.0000 | ms/batch 96.19 | loss 50.10 | mse 50.10 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 700/1949 batches | lr 0.0000 | ms/batch 96.27 | loss 49.37 | mse 49.37 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 800/1949 batches | lr 0.0000 | ms/batch 96.30 | loss 50.67 | mse 50.67 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 900/1949 batches | lr 0.0000 | ms/batch 96.36 | loss 48.38 | mse 48.38 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1000/1949 batches | lr 0.0000 | ms/batch 96.31 | loss 50.99 | mse 50.99 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1100/1949 batches | lr 0.0000 | ms/batch 96.34 | loss 50.40 | mse 50.40 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1200/1949 batches | lr 0.0000 | ms/batch 91.89 | loss 49.82 | mse 49.82 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1300/1949 batches | lr 0.0000 | ms/batch 94.55 | loss 50.57 | mse 50.57 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1400/1949 batches | lr 0.0000 | ms/batch 90.84 | loss 51.08 | mse 51.08 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1500/1949 batches | lr 0.0000 | ms/batch 90.88 | loss 49.25 | mse 49.25 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1600/1949 batches | lr 0.0000 | ms/batch 90.81 | loss 47.99 | mse 47.99 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1700/1949 batches | lr 0.0000 | ms/batch 90.79 | loss 55.31 | mse 55.31 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1800/1949 batches | lr 0.0000 | ms/batch 90.90 | loss 48.36 | mse 48.36 | mre  0.00 |
+scGPT - INFO - | epoch   6 | 1900/1949 batches | lr 0.0000 | ms/batch 90.83 | loss 49.39 | mse 49.39 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   6 | time: 190.27s | valid loss/mse 50.5620 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 50.5620
+best_loss: 51.873573525673244, min_delta 0.0001, val_loss 50.56197121512257
+Loss error: 1.3116023105506756
+epoch:  6
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0714  1.043   0.564   ... 2.684   0.0874  0.06177]
+ [0.04803 0.8105  0.3892  ... 2.527   0.0952  0.05267]
+ [0.06165 0.918   0.4475  ... 2.68    0.10156 0.064  ]
+ ...
+ [0.02905 3.75    2.033   ... 2.508   0.0613  0.0681 ]
+ [0.0349  3.895   2.098   ... 2.477   0.0624  0.0791 ]
+ [0.0347  3.969   2.133   ... 2.535   0.0765  0.06714]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.6023±0.0 MAE:  0.4783±0.0 R2:  0.4264±0.0 PCC:  0.7197±0.0 Cosine Similarity:  0.7951±0.0
+By sample:  MSE:  0.6023±0.0 MAE:  0.4783±0.0 R2:  0.0804±0.0 PCC:  0.238±0.0 Cosine Similarity:  0.5368±0.0
+scGPT - INFO - By feature: MSE: 0.6022999882698059±0.0 MAE: 0.478300005197525±0.0 R2: 0.4264±0.0 PCC: 0.7197±0.0 Cosine Similarity: 0.7951±0.0
+scGPT - INFO - By sample: MSE: 0.6022999882698059±0.0 MAE: 0.478300005197525±0.0 R2: 0.0804±0.0 PCC: 0.238±0.0 Cosine Similarity: 0.5368±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  7
+Training model
+scGPT - INFO - | epoch   7 | 100/1949 batches | lr 0.0000 | ms/batch 92.17 | loss 47.55 | mse 47.55 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 200/1949 batches | lr 0.0000 | ms/batch 90.98 | loss 47.92 | mse 47.92 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 300/1949 batches | lr 0.0000 | ms/batch 90.96 | loss 50.94 | mse 50.94 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 400/1949 batches | lr 0.0000 | ms/batch 91.37 | loss 48.43 | mse 48.43 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 500/1949 batches | lr 0.0000 | ms/batch 92.34 | loss 50.07 | mse 50.07 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 600/1949 batches | lr 0.0000 | ms/batch 96.26 | loss 49.00 | mse 49.00 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 700/1949 batches | lr 0.0000 | ms/batch 96.34 | loss 47.95 | mse 47.95 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 800/1949 batches | lr 0.0000 | ms/batch 93.77 | loss 47.95 | mse 47.95 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 900/1949 batches | lr 0.0000 | ms/batch 93.20 | loss 47.96 | mse 47.96 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1000/1949 batches | lr 0.0000 | ms/batch 93.16 | loss 50.34 | mse 50.34 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1100/1949 batches | lr 0.0000 | ms/batch 94.71 | loss 49.34 | mse 49.34 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1200/1949 batches | lr 0.0000 | ms/batch 96.22 | loss 47.24 | mse 47.24 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1300/1949 batches | lr 0.0000 | ms/batch 96.13 | loss 49.82 | mse 49.82 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1400/1949 batches | lr 0.0000 | ms/batch 96.74 | loss 49.46 | mse 49.46 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1500/1949 batches | lr 0.0000 | ms/batch 96.13 | loss 48.58 | mse 48.58 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1600/1949 batches | lr 0.0000 | ms/batch 96.24 | loss 46.49 | mse 46.49 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1700/1949 batches | lr 0.0000 | ms/batch 96.16 | loss 53.81 | mse 53.81 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1800/1949 batches | lr 0.0000 | ms/batch 96.13 | loss 48.37 | mse 48.37 | mre  0.00 |
+scGPT - INFO - | epoch   7 | 1900/1949 batches | lr 0.0000 | ms/batch 95.68 | loss 47.47 | mse 47.47 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   7 | time: 190.53s | valid loss/mse 50.0758 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 50.0758
+best_loss: 50.56197121512257, min_delta 0.0001, val_loss 50.07579294253166
+Loss error: 0.4861782725909052
+epoch:  7
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0984  1.066   0.515   ... 2.816   0.08685 0.02545]
+ [0.1063  0.994   0.4985  ... 2.574   0.08435 0.02155]
+ [0.1078  1.052   0.5205  ... 2.79    0.1001  0.03375]
+ ...
+ [0.0691  3.965   2.125   ... 2.547   0.09875 0.0711 ]
+ [0.0696  3.941   2.113   ... 2.492   0.0966  0.0811 ]
+ [0.06525 4.06    2.18    ... 2.582   0.11    0.071  ]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5964±0.0 MAE:  0.4776±0.0 R2:  0.4201±0.0 PCC:  0.7219±0.0 Cosine Similarity:  0.7965±0.0
+By sample:  MSE:  0.5964±0.0 MAE:  0.4776±0.0 R2:  0.0857±0.0 PCC:  0.2461±0.0 Cosine Similarity:  0.5383±0.0
+scGPT - INFO - By feature: MSE: 0.5964000225067139±0.0 MAE: 0.47760000824928284±0.0 R2: 0.4201±0.0 PCC: 0.7219±0.0 Cosine Similarity: 0.7965±0.0
+scGPT - INFO - By sample: MSE: 0.5964000225067139±0.0 MAE: 0.47760000824928284±0.0 R2: 0.0857±0.0 PCC: 0.2461±0.0 Cosine Similarity: 0.5383±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  8
+Training model
+scGPT - INFO - | epoch   8 | 100/1949 batches | lr 0.0000 | ms/batch 97.35 | loss 46.36 | mse 46.36 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 200/1949 batches | lr 0.0000 | ms/batch 96.15 | loss 47.07 | mse 47.07 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 300/1949 batches | lr 0.0000 | ms/batch 96.17 | loss 49.84 | mse 49.84 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 400/1949 batches | lr 0.0000 | ms/batch 96.68 | loss 47.00 | mse 47.00 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 500/1949 batches | lr 0.0000 | ms/batch 96.03 | loss 49.17 | mse 49.17 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 600/1949 batches | lr 0.0000 | ms/batch 96.16 | loss 47.95 | mse 47.95 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 700/1949 batches | lr 0.0000 | ms/batch 96.25 | loss 47.72 | mse 47.72 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 800/1949 batches | lr 0.0000 | ms/batch 96.12 | loss 47.40 | mse 47.40 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 900/1949 batches | lr 0.0000 | ms/batch 96.09 | loss 47.12 | mse 47.12 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1000/1949 batches | lr 0.0000 | ms/batch 96.20 | loss 49.15 | mse 49.15 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1100/1949 batches | lr 0.0000 | ms/batch 96.10 | loss 47.75 | mse 47.75 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1200/1949 batches | lr 0.0000 | ms/batch 96.23 | loss 46.81 | mse 46.81 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1300/1949 batches | lr 0.0000 | ms/batch 95.87 | loss 48.45 | mse 48.45 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1400/1949 batches | lr 0.0000 | ms/batch 93.96 | loss 49.25 | mse 49.25 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1500/1949 batches | lr 0.0000 | ms/batch 96.30 | loss 46.97 | mse 46.97 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1600/1949 batches | lr 0.0000 | ms/batch 96.25 | loss 45.76 | mse 45.76 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1700/1949 batches | lr 0.0000 | ms/batch 96.35 | loss 51.19 | mse 51.19 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1800/1949 batches | lr 0.0000 | ms/batch 96.32 | loss 46.74 | mse 46.74 | mre  0.00 |
+scGPT - INFO - | epoch   8 | 1900/1949 batches | lr 0.0000 | ms/batch 96.38 | loss 46.67 | mse 46.67 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   8 | time: 195.31s | valid loss/mse 49.8467 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 49.8467
+best_loss: 50.07579294253166, min_delta 0.0001, val_loss 49.84670513496663
+Loss error: 0.22908780756502978
+epoch:  8
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0797  1.492   0.7915  ... 2.826   0.05524 0.0453 ]
+ [0.0776  0.8613  0.3943  ... 2.625   0.0769  0.03156]
+ [0.0879  0.95    0.428   ... 2.844   0.0845  0.04395]
+ ...
+ [0.05127 4.01    2.178   ... 2.527   0.096   0.0498 ]
+ [0.03906 4.008   2.16    ... 2.488   0.0995  0.07837]
+ [0.03925 4.168   2.258   ... 2.562   0.109   0.05917]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5937±0.0 MAE:  0.4765±0.0 R2:  0.4175±0.0 PCC:  0.724±0.0 Cosine Similarity:  0.7978±0.0
+By sample:  MSE:  0.5937±0.0 MAE:  0.4765±0.0 R2:  0.0901±0.0 PCC:  0.2575±0.0 Cosine Similarity:  0.5439±0.0
+scGPT - INFO - By feature: MSE: 0.5936999917030334±0.0 MAE: 0.476500004529953±0.0 R2: 0.4175±0.0 PCC: 0.724±0.0 Cosine Similarity: 0.7978±0.0
+scGPT - INFO - By sample: MSE: 0.5936999917030334±0.0 MAE: 0.476500004529953±0.0 R2: 0.0901±0.0 PCC: 0.2575±0.0 Cosine Similarity: 0.5439±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  9
+Training model
+scGPT - INFO - | epoch   9 | 100/1949 batches | lr 0.0000 | ms/batch 97.72 | loss 46.32 | mse 46.32 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 200/1949 batches | lr 0.0000 | ms/batch 96.32 | loss 45.77 | mse 45.77 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 300/1949 batches | lr 0.0000 | ms/batch 96.31 | loss 48.20 | mse 48.20 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 400/1949 batches | lr 0.0000 | ms/batch 96.36 | loss 46.64 | mse 46.64 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 500/1949 batches | lr 0.0000 | ms/batch 96.95 | loss 48.98 | mse 48.98 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 600/1949 batches | lr 0.0000 | ms/batch 96.30 | loss 46.55 | mse 46.55 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 700/1949 batches | lr 0.0000 | ms/batch 93.37 | loss 46.88 | mse 46.88 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 800/1949 batches | lr 0.0000 | ms/batch 93.48 | loss 47.25 | mse 47.25 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 900/1949 batches | lr 0.0000 | ms/batch 93.11 | loss 47.10 | mse 47.10 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1000/1949 batches | lr 0.0000 | ms/batch 93.03 | loss 48.53 | mse 48.53 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1100/1949 batches | lr 0.0000 | ms/batch 93.23 | loss 48.32 | mse 48.32 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1200/1949 batches | lr 0.0000 | ms/batch 93.16 | loss 45.45 | mse 45.45 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1300/1949 batches | lr 0.0000 | ms/batch 92.97 | loss 46.97 | mse 46.97 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1400/1949 batches | lr 0.0000 | ms/batch 92.97 | loss 49.06 | mse 49.06 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1500/1949 batches | lr 0.0000 | ms/batch 93.49 | loss 46.53 | mse 46.53 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1600/1949 batches | lr 0.0000 | ms/batch 92.90 | loss 45.23 | mse 45.23 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1700/1949 batches | lr 0.0000 | ms/batch 94.92 | loss 51.74 | mse 51.74 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1800/1949 batches | lr 0.0000 | ms/batch 93.48 | loss 46.76 | mse 46.76 | mre  0.00 |
+scGPT - INFO - | epoch   9 | 1900/1949 batches | lr 0.0000 | ms/batch 93.15 | loss 46.45 | mse 46.45 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch   9 | time: 190.81s | valid loss/mse 49.6370 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 49.6370
+best_loss: 49.84670513496663, min_delta 0.0001, val_loss 49.637025258282314
+Loss error: 0.2096798766843193
+epoch:  9
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0343  2.785   1.516   ... 2.662   0.1057  0.0819 ]
+ [0.0617  0.7827  0.347   ... 2.607   0.08374 0.0708 ]
+ [0.07465 0.8813  0.3943  ... 2.807   0.1009  0.07465]
+ ...
+ [0.0597  4.074   2.248   ... 2.512   0.05872 0.079  ]
+ [0.05756 4.04    2.203   ... 2.488   0.067   0.10364]
+ [0.0593  4.17    2.316   ... 2.55    0.05994 0.0905 ]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5912±0.0 MAE:  0.4745±0.0 R2:  0.4162±0.0 PCC:  0.7259±0.0 Cosine Similarity:  0.799±0.0
+By sample:  MSE:  0.5912±0.0 MAE:  0.4745±0.0 R2:  0.0911±0.0 PCC:  0.2688±0.0 Cosine Similarity:  0.5456±0.0
+scGPT - INFO - By feature: MSE: 0.5911999940872192±0.0 MAE: 0.47450000047683716±0.0 R2: 0.4162±0.0 PCC: 0.7259±0.0 Cosine Similarity: 0.799±0.0
+scGPT - INFO - By sample: MSE: 0.5911999940872192±0.0 MAE: 0.47450000047683716±0.0 R2: 0.0911±0.0 PCC: 0.2688±0.0 Cosine Similarity: 0.5456±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  10
+Training model
+scGPT - INFO - | epoch  10 | 100/1949 batches | lr 0.0000 | ms/batch 94.26 | loss 46.00 | mse 46.00 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 200/1949 batches | lr 0.0000 | ms/batch 93.14 | loss 45.53 | mse 45.53 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 300/1949 batches | lr 0.0000 | ms/batch 93.10 | loss 48.48 | mse 48.48 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 400/1949 batches | lr 0.0000 | ms/batch 93.14 | loss 45.53 | mse 45.53 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 500/1949 batches | lr 0.0000 | ms/batch 93.62 | loss 48.99 | mse 48.99 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 600/1949 batches | lr 0.0000 | ms/batch 93.07 | loss 46.35 | mse 46.35 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 700/1949 batches | lr 0.0000 | ms/batch 93.36 | loss 46.63 | mse 46.63 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 800/1949 batches | lr 0.0000 | ms/batch 93.09 | loss 47.06 | mse 47.06 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 900/1949 batches | lr 0.0000 | ms/batch 93.14 | loss 46.05 | mse 46.05 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1000/1949 batches | lr 0.0000 | ms/batch 93.09 | loss 47.25 | mse 47.25 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1100/1949 batches | lr 0.0000 | ms/batch 93.16 | loss 47.67 | mse 47.67 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1200/1949 batches | lr 0.0000 | ms/batch 93.15 | loss 44.94 | mse 44.94 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1300/1949 batches | lr 0.0000 | ms/batch 93.15 | loss 46.74 | mse 46.74 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1400/1949 batches | lr 0.0000 | ms/batch 93.13 | loss 46.94 | mse 46.94 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1500/1949 batches | lr 0.0000 | ms/batch 93.73 | loss 46.47 | mse 46.47 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1600/1949 batches | lr 0.0000 | ms/batch 93.16 | loss 44.59 | mse 44.59 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1700/1949 batches | lr 0.0000 | ms/batch 93.13 | loss 51.01 | mse 51.01 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1800/1949 batches | lr 0.0000 | ms/batch 93.15 | loss 45.67 | mse 45.67 | mre  0.00 |
+scGPT - INFO - | epoch  10 | 1900/1949 batches | lr 0.0000 | ms/batch 93.21 | loss 45.33 | mse 45.33 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch  10 | time: 188.69s | valid loss/mse 48.9200 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 48.9200
+best_loss: 49.637025258282314, min_delta 0.0001, val_loss 48.91995686361476
+Loss error: 0.7170683946675567
+epoch:  10
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0625  1.766   0.936   ... 2.82    0.0734  0.05893]
+ [0.074   0.7344  0.2917  ... 2.559   0.1039  0.0585 ]
+ [0.08105 0.8193  0.3186  ... 2.78    0.1142  0.07056]
+ ...
+ [0.07367 4.168   2.285   ... 2.52    0.0782  0.06726]
+ [0.0619  4.105   2.213   ... 2.5     0.0906  0.0868 ]
+ [0.07227 4.242   2.322   ... 2.568   0.08636 0.07544]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5826±0.0 MAE:  0.4692±0.0 R2:  0.4263±0.0 PCC:  0.7314±0.0 Cosine Similarity:  0.8028±0.0
+By sample:  MSE:  0.5826±0.0 MAE:  0.4692±0.0 R2:  0.0995±0.0 PCC:  0.2789±0.0 Cosine Similarity:  0.5497±0.0
+scGPT - INFO - By feature: MSE: 0.5825999975204468±0.0 MAE: 0.4691999852657318±0.0 R2: 0.4263±0.0 PCC: 0.7314±0.0 Cosine Similarity: 0.8028±0.0
+scGPT - INFO - By sample: MSE: 0.5825999975204468±0.0 MAE: 0.4691999852657318±0.0 R2: 0.0995±0.0 PCC: 0.2789±0.0 Cosine Similarity: 0.5497±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  11
+Training model
+scGPT - INFO - | epoch  11 | 100/1949 batches | lr 0.0000 | ms/batch 94.14 | loss 45.03 | mse 45.03 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 200/1949 batches | lr 0.0000 | ms/batch 92.88 | loss 45.45 | mse 45.45 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 300/1949 batches | lr 0.0000 | ms/batch 92.88 | loss 47.27 | mse 47.27 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 400/1949 batches | lr 0.0000 | ms/batch 92.86 | loss 45.08 | mse 45.08 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 500/1949 batches | lr 0.0000 | ms/batch 92.80 | loss 48.16 | mse 48.16 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 600/1949 batches | lr 0.0000 | ms/batch 96.28 | loss 45.69 | mse 45.69 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 700/1949 batches | lr 0.0000 | ms/batch 96.09 | loss 46.92 | mse 46.92 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 800/1949 batches | lr 0.0000 | ms/batch 96.21 | loss 46.32 | mse 46.32 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 900/1949 batches | lr 0.0000 | ms/batch 94.18 | loss 45.78 | mse 45.78 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1000/1949 batches | lr 0.0000 | ms/batch 92.98 | loss 47.31 | mse 47.31 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1100/1949 batches | lr 0.0000 | ms/batch 91.99 | loss 46.89 | mse 46.89 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1200/1949 batches | lr 0.0000 | ms/batch 90.92 | loss 44.00 | mse 44.00 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1300/1949 batches | lr 0.0000 | ms/batch 90.77 | loss 45.63 | mse 45.63 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1400/1949 batches | lr 0.0000 | ms/batch 90.94 | loss 45.56 | mse 45.56 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1500/1949 batches | lr 0.0000 | ms/batch 90.90 | loss 45.57 | mse 45.57 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1600/1949 batches | lr 0.0000 | ms/batch 92.60 | loss 44.33 | mse 44.33 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1700/1949 batches | lr 0.0000 | ms/batch 92.86 | loss 50.44 | mse 50.44 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1800/1949 batches | lr 0.0000 | ms/batch 92.40 | loss 44.98 | mse 44.98 | mre  0.00 |
+scGPT - INFO - | epoch  11 | 1900/1949 batches | lr 0.0000 | ms/batch 93.14 | loss 44.69 | mse 44.69 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch  11 | time: 189.38s | valid loss/mse 47.4833 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 47.4833
+best_loss: 48.91995686361476, min_delta 0.0001, val_loss 47.48331428289964
+Loss error: 1.436642580715116
+epoch:  11
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0635  1.708   0.908   ... 2.893   0.0649  0.05847]
+ [0.05237 0.7417  0.2986  ... 2.531   0.09576 0.05292]
+ [0.05457 0.8237  0.3193  ... 2.713   0.111   0.06683]
+ ...
+ [0.07355 4.137   2.254   ... 2.54    0.07745 0.0598 ]
+ [0.0637  4.043   2.166   ... 2.52    0.0816  0.0823 ]
+ [0.0698  4.234   2.322   ... 2.572   0.08264 0.07074]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5655±0.0 MAE:  0.4618±0.0 R2:  0.4479±0.0 PCC:  0.7399±0.0 Cosine Similarity:  0.8085±0.0
+By sample:  MSE:  0.5655±0.0 MAE:  0.4618±0.0 R2:  0.1134±0.0 PCC:  0.2943±0.0 Cosine Similarity:  0.5559±0.0
+scGPT - INFO - By feature: MSE: 0.565500020980835±0.0 MAE: 0.4618000090122223±0.0 R2: 0.4479±0.0 PCC: 0.7399±0.0 Cosine Similarity: 0.8085±0.0
+scGPT - INFO - By sample: MSE: 0.565500020980835±0.0 MAE: 0.4618000090122223±0.0 R2: 0.1134±0.0 PCC: 0.2943±0.0 Cosine Similarity: 0.5559±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  12
+Training model
+scGPT - INFO - | epoch  12 | 100/1949 batches | lr 0.0000 | ms/batch 97.62 | loss 44.93 | mse 44.93 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 200/1949 batches | lr 0.0000 | ms/batch 96.37 | loss 44.66 | mse 44.66 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 300/1949 batches | lr 0.0000 | ms/batch 96.31 | loss 46.98 | mse 46.98 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 400/1949 batches | lr 0.0000 | ms/batch 96.24 | loss 44.43 | mse 44.43 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 500/1949 batches | lr 0.0000 | ms/batch 96.38 | loss 47.68 | mse 47.68 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 600/1949 batches | lr 0.0000 | ms/batch 96.86 | loss 44.66 | mse 44.66 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 700/1949 batches | lr 0.0000 | ms/batch 96.40 | loss 46.32 | mse 46.32 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 800/1949 batches | lr 0.0000 | ms/batch 96.35 | loss 46.46 | mse 46.46 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 900/1949 batches | lr 0.0000 | ms/batch 96.21 | loss 45.93 | mse 45.93 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1000/1949 batches | lr 0.0000 | ms/batch 95.67 | loss 46.98 | mse 46.98 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1100/1949 batches | lr 0.0000 | ms/batch 93.12 | loss 47.00 | mse 47.00 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1200/1949 batches | lr 0.0000 | ms/batch 93.09 | loss 44.13 | mse 44.13 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1300/1949 batches | lr 0.0000 | ms/batch 93.09 | loss 44.80 | mse 44.80 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1400/1949 batches | lr 0.0000 | ms/batch 93.11 | loss 45.46 | mse 45.46 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1500/1949 batches | lr 0.0000 | ms/batch 92.83 | loss 45.34 | mse 45.34 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1600/1949 batches | lr 0.0000 | ms/batch 93.42 | loss 44.17 | mse 44.17 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1700/1949 batches | lr 0.0000 | ms/batch 92.89 | loss 49.98 | mse 49.98 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1800/1949 batches | lr 0.0000 | ms/batch 92.88 | loss 44.60 | mse 44.60 | mre  0.00 |
+scGPT - INFO - | epoch  12 | 1900/1949 batches | lr 0.0000 | ms/batch 92.87 | loss 44.71 | mse 44.71 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch  12 | time: 191.36s | valid loss/mse 47.3472 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - Best model with score 47.3472
+best_loss: 47.48331428289964, min_delta 0.0001, val_loss 47.347246608337684
+Loss error: 0.13606767456195712
+epoch:  12
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0728  1.336   0.7075  ... 2.957   0.0685  0.04376]
+ [0.05115 0.727   0.295   ... 2.521   0.07965 0.0537 ]
+ [0.04028 0.78    0.3022  ... 2.64    0.09155 0.06464]
+ ...
+ [0.0712  4.117   2.25    ... 2.516   0.0724  0.06744]
+ [0.06476 4.03    2.166   ... 2.477   0.0809  0.0826 ]
+ [0.07166 4.223   2.34    ... 2.535   0.075   0.0793 ]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5639±0.0 MAE:  0.4586±0.0 R2:  0.4519±0.0 PCC:  0.7409±0.0 Cosine Similarity:  0.8094±0.0
+By sample:  MSE:  0.5639±0.0 MAE:  0.4586±0.0 R2:  0.1121±0.0 PCC:  0.2931±0.0 Cosine Similarity:  0.5544±0.0
+scGPT - INFO - By feature: MSE: 0.5638999938964844±0.0 MAE: 0.4586000144481659±0.0 R2: 0.4519±0.0 PCC: 0.7409±0.0 Cosine Similarity: 0.8094±0.0
+scGPT - INFO - By sample: MSE: 0.5638999938964844±0.0 MAE: 0.4586000144481659±0.0 R2: 0.1121±0.0 PCC: 0.2931±0.0 Cosine Similarity: 0.5544±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  13
+Training model
+scGPT - INFO - | epoch  13 | 100/1949 batches | lr 0.0000 | ms/batch 92.17 | loss 44.33 | mse 44.33 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 200/1949 batches | lr 0.0000 | ms/batch 91.74 | loss 44.77 | mse 44.77 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 300/1949 batches | lr 0.0000 | ms/batch 92.90 | loss 46.29 | mse 46.29 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 400/1949 batches | lr 0.0000 | ms/batch 92.93 | loss 43.61 | mse 43.61 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 500/1949 batches | lr 0.0000 | ms/batch 92.94 | loss 47.61 | mse 47.61 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 600/1949 batches | lr 0.0000 | ms/batch 92.87 | loss 44.68 | mse 44.68 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 700/1949 batches | lr 0.0000 | ms/batch 93.47 | loss 45.93 | mse 45.93 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 800/1949 batches | lr 0.0000 | ms/batch 92.89 | loss 45.40 | mse 45.40 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 900/1949 batches | lr 0.0000 | ms/batch 92.86 | loss 46.22 | mse 46.22 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1000/1949 batches | lr 0.0000 | ms/batch 92.93 | loss 46.50 | mse 46.50 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1100/1949 batches | lr 0.0000 | ms/batch 92.90 | loss 45.90 | mse 45.90 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1200/1949 batches | lr 0.0000 | ms/batch 92.88 | loss 43.41 | mse 43.41 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1300/1949 batches | lr 0.0000 | ms/batch 93.03 | loss 44.91 | mse 44.91 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1400/1949 batches | lr 0.0000 | ms/batch 92.91 | loss 44.51 | mse 44.51 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1500/1949 batches | lr 0.0000 | ms/batch 92.76 | loss 44.63 | mse 44.63 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1600/1949 batches | lr 0.0000 | ms/batch 92.93 | loss 43.23 | mse 43.23 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1700/1949 batches | lr 0.0000 | ms/batch 93.50 | loss 50.15 | mse 50.15 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1800/1949 batches | lr 0.0000 | ms/batch 92.93 | loss 43.70 | mse 43.70 | mre  0.00 |
+scGPT - INFO - | epoch  13 | 1900/1949 batches | lr 0.0000 | ms/batch 91.03 | loss 43.99 | mse 43.99 | mre  0.00 |
+Evaluating model
+scGPT - INFO - -----------------------------------------------------------------------------------------
+scGPT - INFO - | end of epoch  13 | time: 187.34s | valid loss/mse 47.3810 |
+scGPT - INFO - -----------------------------------------------------------------------------------------
+best_loss: 47.347246608337684, min_delta 0.0001, val_loss 47.38102438047907
+Loss error: -0.03377777214138433
+scGPT - INFO - INFO: Early stopping counter 1 of 10
+epoch:  13
+[[0.        0.        0.        ... 4.634729  0.        0.       ]
+ [0.        0.        0.        ... 1.0986123 0.6931472 0.       ]
+ [0.        0.        0.6931472 ... 0.6931472 0.        0.       ]
+ ...
+ [0.        3.218876  0.6931472 ... 1.9459102 0.        0.       ]
+ [0.        3.3322046 1.609438  ... 2.0794415 0.        0.       ]
+ [0.        4.7706847 3.1354942 ... 2.3025851 0.        0.       ]]
+[[0.0924  1.384   0.722   ... 3.062   0.0782  0.03467]
+ [0.0417  0.724   0.275   ... 2.363   0.08997 0.05444]
+ [0.02296 0.7593  0.2798  ... 2.412   0.1054  0.0634 ]
+ ...
+ [0.0754  4.227   2.338   ... 2.592   0.07526 0.08875]
+ [0.06213 4.117   2.238   ... 2.533   0.0823  0.09534]
+ [0.0737  4.285   2.402   ... 2.602   0.078   0.09735]]
+(433, 42) (433, 42)
+By feature:  MSE:  0.5643±0.0 MAE:  0.4583±0.0 R2:  0.4529±0.0 PCC:  0.7422±0.0 Cosine Similarity:  0.8103±0.0
+By sample:  MSE:  0.5643±0.0 MAE:  0.4583±0.0 R2:  0.1088±0.0 PCC:  0.293±0.0 Cosine Similarity:  0.5537±0.0
+scGPT - INFO - By feature: MSE: 0.564300000667572±0.0 MAE: 0.45829999446868896±0.0 R2: 0.4529±0.0 PCC: 0.7422±0.0 Cosine Similarity: 0.8103±0.0
+scGPT - INFO - By sample: MSE: 0.564300000667572±0.0 MAE: 0.45829999446868896±0.0 R2: 0.1088±0.0 PCC: 0.293±0.0 Cosine Similarity: 0.5537±0.0
+{'seed': 42, 'dataset_name': 'ms', 'do_train': True, 'load_model': '/home/wsl20/Projects/RNA2prot/scPEFT_R2P/R2P_Efficient/scgpt_PEFT/scGPT_human', 'mask_ratio': 0.0, 'epochs': 100, 'n_bins': 51, 'n_hvg': False, 'n_hvp': 4000, 'MVC': False, 'ecs_thres': 0.0, 'dab_weight': 0.0, 'lr': 5e-05, 'batch_size': 2, 'layer_size': 128, 'nlayers': 4, 'nhead': 4, 'dropout': 0.2, 'schedule_ratio': 0.9, 'save_eval_interval': 5, 'fast_transformer': False, 'pre_norm': False, 'amp': True, 'include_zero_gene': True, 'freeze': False, 'DSBN': False, 'data_path': '/home/wsl20/Projects/RNA2prot/scGPT/data/', 'use_prompt': True, 'prompt_type': 'Gene_encoder_prompt', 'num_tokens': 64, 'n_layers_conf': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'mlp_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'space_adapter_conf': [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], 'use_mod': True}
+Epoch:  14
+Training model
+scGPT - INFO - | epoch  14 | 100/1949 batches | lr 0.0000 | ms/batch 92.20 | loss 44.00 | mse 44.00 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 200/1949 batches | lr 0.0000 | ms/batch 90.89 | loss 43.98 | mse 43.98 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 300/1949 batches | lr 0.0000 | ms/batch 90.89 | loss 45.80 | mse 45.80 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 400/1949 batches | lr 0.0000 | ms/batch 90.96 | loss 43.72 | mse 43.72 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 500/1949 batches | lr 0.0000 | ms/batch 91.11 | loss 47.37 | mse 47.37 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 600/1949 batches | lr 0.0000 | ms/batch 91.10 | loss 44.12 | mse 44.12 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 700/1949 batches | lr 0.0000 | ms/batch 91.57 | loss 44.50 | mse 44.50 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 800/1949 batches | lr 0.0000 | ms/batch 91.00 | loss 46.25 | mse 46.25 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 900/1949 batches | lr 0.0000 | ms/batch 91.08 | loss 45.74 | mse 45.74 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 1000/1949 batches | lr 0.0000 | ms/batch 90.98 | loss 46.27 | mse 46.27 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 1100/1949 batches | lr 0.0000 | ms/batch 91.91 | loss 45.45 | mse 45.45 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 1200/1949 batches | lr 0.0000 | ms/batch 92.39 | loss 42.40 | mse 42.40 | mre  0.00 |
+scGPT - INFO - | epoch  14 | 1300/1949 batches | lr 0.0000 | ms/batch 93.37 | loss 44.80 | mse 44.80 | mre  0.00 |
